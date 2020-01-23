@@ -20,8 +20,8 @@ function Graphique({ data }) {
   }, []);
 
   useEffect(() => {
-    chartRef.current.data.datasets[0].data = data;
     if (chartRef.current) {
+      chartRef.current.data.datasets[0].data = data;
       chartRef.current.update();
     }
   }, [data]);
