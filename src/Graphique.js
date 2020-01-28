@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Chart } from 'chart.js';
 
 function Graphique({ data }) {
   const graphRef = useRef(null);
   const chartRef = useRef(null);
   useEffect(() => {
-    const ctx = graphRef.current;
+    const ctx = graphRef.current.getContext('2d');
     chartRef.current = new Chart(ctx, {
       type: 'bar',
       data: {
